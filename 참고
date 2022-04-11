@@ -12,6 +12,24 @@ https://docs.microsoft.com/ko-kr/aspnet/core/client-side/spa/react?view=aspnetco
 
 https://docs.microsoft.com/ko-kr/aspnet/core/tutorials/choose-web-ui?view=aspnetcore-6.0
 https://docs.microsoft.com/ko-kr/aspnet/core/client-side/spa/react?view=aspnetcore-6.0&tabs=visual-studio
+https://docs.microsoft.com/ko-kr/dotnet/framework/data/adonet/ef/
 
 -- 읽어야함
-https://docs.microsoft.com/ko-kr/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-6.0&tabs=visual-studio
+https://docs.microsoft.com/ko-kr/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio
+
+
+
+<키워드>
+HSTS
+HttpRepl : https://docs.microsoft.com/ko-kr/aspnet/core/web-api/http-repl/?view=aspnetcore-6.0&tabs=windows
+OAuth
+
+
+
+<구현기능>
+로그인
+Duende Identity Server
+JWT
+페이징
+모델바인딩
+API 호출 : https://docs.microsoft.com/ko-kr/aspnet/core/tutorials/web-api-javascript?view=aspnetcore-6.0
