@@ -15,7 +15,7 @@ https://docs.microsoft.com/ko-kr/aspnet/core/client-side/spa/react?view=aspnetco
 https://docs.microsoft.com/ko-kr/dotnet/framework/data/adonet/ef/
 
 -- 읽어야함
-https://docs.microsoft.com/ko-kr/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio
+https://docs.microsoft.com/ko-kr/aspnet/core/data/ef-mvc/?view=aspnetcore-6.0
 
 
 
@@ -23,7 +23,8 @@ https://docs.microsoft.com/ko-kr/aspnet/core/tutorials/first-web-api?view=aspnet
 HSTS
 HttpRepl : https://docs.microsoft.com/ko-kr/aspnet/core/web-api/http-repl/?view=aspnetcore-6.0&tabs=windows
 OAuth
-
+SignalR
+gRPC
 
 
 <구현기능>
