@@ -1,6 +1,8 @@
 - net runtime 설치
 - mysql 설치
 - apache 설치
+https://kimjs6873.tistory.com/5
+whereis httpd 설치경로 확인
 - apache 포트 설정 및 재기동
 yum list installed | grep httpd 설치확인
 um install -y httpd 설치
@@ -11,25 +13,41 @@ firewall-cmd --permanent --add-service=http
 firewall-cmd --permanent --add-service=https
 firewall-cmd --reload 
 서비스 재기동
-systemctl enable httpd
 systemctl start http
+systemctl restart httpd
+systemctl enable httpd
 
 - apache 환경설정(리버스 프록시 설정 등)
+cd /etc/httpd/conf.d conf 파일 생성
+sudo apachectl configtest 설정 검증
+
+
+
+
 - putty 설치 및 ssh 설정
 
 
 - 네트워크 연결 및 ip 확인 : hostname -I
 
 - root 디렉토리 구조
+https://firedev.tistory.com/entry/Linux-Unix-%EB%A6%AC%EB%88%85%EC%8A%A4%EC%8B%9C%EC%8A%A4%ED%85%9C-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EC%99%80-%EA%B8%B0%EB%8A%A5
+
 cd ~ : 홈계정
 - 디렉토리 및 파일 생성, 수정, 복사, 삭제
 mkdir -pv 디렉토리명
 vi
 pwd 현재경로 출력
 ls -al 파일목록 출력
+chown 계정[:그룹] 파일 or 디렉토리
+chmod 775 파일 or 디렉토리
 
+접근 모드는 총 9자리 문자열로 표시된다.
+1~3자리 : 소유주 권한
+4~6자리 : 그룹 권한
+7~9자리 : 그 외 사용자 권한
 
 - net core 앱 빌드 산출물 centos 로 업로드 및 다운로드
-pscp 
+pscp -r D:\DaouDev\DaouPlatform\bin\Release\net6.0\publish\* juhyeok@192.168.137.5:/opt/test11
 
+- 서비스 파일 만들기
 
