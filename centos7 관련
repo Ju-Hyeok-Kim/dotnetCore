@@ -1,0 +1,35 @@
+- net runtime 설치
+- mysql 설치
+- apache 설치
+- apache 포트 설정 및 재기동
+yum list installed | grep httpd 설치확인
+um install -y httpd 설치
+cd /etc/httpd 설치경로 이동
+cd /etc/httpd/conf.d 환경설정
+방화벽 설정
+firewall-cmd --permanent --add-service=http 
+firewall-cmd --permanent --add-service=https
+firewall-cmd --reload 
+서비스 재기동
+systemctl enable httpd
+systemctl start http
+
+- apache 환경설정(리버스 프록시 설정 등)
+- putty 설치 및 ssh 설정
+
+
+- 네트워크 연결 및 ip 확인 : hostname -I
+
+- root 디렉토리 구조
+cd ~ : 홈계정
+- 디렉토리 및 파일 생성, 수정, 복사, 삭제
+mkdir -pv 디렉토리명
+vi
+pwd 현재경로 출력
+ls -al 파일목록 출력
+
+
+- net core 앱 빌드 산출물 centos 로 업로드 및 다운로드
+pscp 
+
+
