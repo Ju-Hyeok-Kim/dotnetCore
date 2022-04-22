@@ -36,3 +36,6 @@ JWT
 페이징
 모델바인딩
 API 호출 : https://docs.microsoft.com/ko-kr/aspnet/core/tutorials/web-api-javascript?view=aspnetcore-6.0
+
+<참고>
+https://github.com/gnuboard/gnuboard5 
