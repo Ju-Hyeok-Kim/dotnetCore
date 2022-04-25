@@ -1,4 +1,4 @@
-- /etc/httpd/conf.d 경로에 설정 파일
+1. /etc/httpd/conf.d 경로에 conf 파일
 
 <VirtualHost *:*>
     RequestHeader set "X-Forwarded-Proto" expr=%{REQUEST_SCHEME}e
@@ -15,4 +15,21 @@
 </VirtualHost>
 
 
+2. /etc/systemd/system 경로에 service 파일
 
+[Unit]
+Description=Example .NET Web API App running on CentOS 7
+
+[Service]
+WorkingDirectory=/opt/Project1
+ExecStart=/usr/share/dotnet/dotnet /opt/Project1/Project1.dll
+Restart=always
+# Restart service after 10 seconds if the dotnet service crashes:
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=dotnet-example
+User=apache
+Environment=ASPNETCORE_ENVIRONMENT=Production
+
+[Install]
+WantedBy=multi-user.target
