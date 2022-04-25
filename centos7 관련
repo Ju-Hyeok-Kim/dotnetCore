@@ -65,7 +65,7 @@ pscp -r juhyeok@192.168.137.5:/etc/httpd/conf.d/helloapp.conf D:\DaouDev\DaouPla
 
 - 서비스 파일 만들기
 cd /etc/systemd/system/
-
+systemctl daemon-reload
 
 - https 기반로드 밸런서
 sudo a2enmod ssl
