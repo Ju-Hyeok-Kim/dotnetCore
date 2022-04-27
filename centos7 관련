@@ -72,3 +72,42 @@ sudo a2enmod ssl
 sudo a2enmod proxy
 sudo a2enmod proxy_balancer
 sudo a2enmod proxy_http
+
+- mysql 설치
+sudo yum install -y https://dev.mysql.com/get/mysql80-community-release-el7-6.noarch.rpm 추가
+rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022 키 추가
+yum repolist enabled | grep "mysql.*" 찾기
+yum search mysql 찾기
+sudo nstall -y mysql-server 설치
+mysqld -V 설치버전 확인
+systemctl enable mysqld && systemctl start mysqld && systemctl status mysqld 서비스 시작
+cd /usr/lib/systemd/system/ 서비스 확인
+grep 'temporary password' /var/log/mysqld.log 비밀번호 확인
+mysql -u root -p 접속
+show variables like 'validate_password%'; 비밀번호 정책
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Daou@2022'; 비밀번호 변경
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
