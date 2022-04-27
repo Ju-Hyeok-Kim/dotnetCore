@@ -8,10 +8,13 @@ yum list installed | grep httpd 설치확인
 um install -y httpd 설치
 cd /etc/httpd 설치경로 이동
 cd /etc/httpd/conf.d 환경설정
+
 방화벽 설정
-firewall-cmd --permanent --add-service=http 
-firewall-cmd --permanent --add-service=https
-firewall-cmd --reload 
+sudo firewall-cmd --permanent --add-service=http 
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --reload 
+sudo systemctl status firewalld
+
 서비스 재기동
 sudo systemctl start httpd
 sudo systemctl restart httpd
@@ -86,15 +89,14 @@ grep 'temporary password' /var/log/mysqld.log 비밀번호 확인
 mysql -u root -p 접속
 show variables like 'validate_password%'; 비밀번호 정책
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'Daou@2022'; 비밀번호 변경
-
-
-
-
-
-
-
-
-
+SELECT Host,User,plugin,authentication_string FROM mysql.user; 유저확인
+CREATE USER 'Daou'@'%' identified by 'Daou@2022'; 사용자 생성
+select * from user where mysql.user = 'Daou'; 권한 조회
+GRANT ALL PRIVILEGES ON *.* to 'Daou'@'%'; 권한 할당
+flush privileges; 새로고침
+sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent 포트오픈
+sudo firewall-cmd --reload 로딩
+sudo firewall-cmd --list-ports 목록 확인
 
 
 
