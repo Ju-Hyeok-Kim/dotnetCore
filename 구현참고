@@ -1,0 +1,15 @@
+- ASP.NET Core에서 IHttpClientFactory를 사용하여 HTTP 요청 만들기
+: https://docs.microsoft.com/ko-kr/aspnet/core/fundamentals/http-requests?view=aspnetcore-6.0
+
+- 인증, 권한부여
+: https://github.com/dotnet/aspnetcore
+
+- 비밀관리
+: https://docs.microsoft.com/ko-kr/aspnet/core/security/app-secrets?view=aspnetcore-6.0&tabs=linux
+
+- https 적용 및 서버공격 방지
+: https://docs.microsoft.com/ko-kr/aspnet/core/security/enforcing-ssl?view=aspnetcore-6.0&tabs=visual-studio
+
+- api 버전 관리
+: https://www.infoworld.com/article/3047602/how-to-version-your-web-api.html
+: https://www.infoworld.com/article/3562355/how-to-use-api-versioning-in-aspnet-core.html
