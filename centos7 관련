@@ -1,3 +1,6 @@
+- 참고
+https://dev.to/esdanielgomez/deploy-asp-net-web-app-to-a-linux-virtual-machine-in-azure-1lji
+
 - net runtime 설치
 - mysql 설치
 - apache 설치
@@ -5,7 +8,7 @@ https://kimjs6873.tistory.com/5
 whereis httpd 설치경로 확인
 - apache 포트 설정 및 재기동
 yum list installed | grep httpd 설치확인
-um install -y httpd 설치
+sudo yum install -y httpd 설치
 cd /etc/httpd 설치경로 이동
 cd /etc/httpd/conf.d 환경설정
 
@@ -27,7 +30,6 @@ sudo systemctl restart httpd
 sudo systemctl stop httpd
 sudo systemctl enable httpd
 sudo systemctl status httpd.service
-
 
 - apache 환경설정(리버스 프록시 설정 등)
 cd /etc/httpd/conf.d conf 파일 생성
