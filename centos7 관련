@@ -45,7 +45,11 @@ vi error_log
 
 
 
-- putty 설치 및 ssh 설정
+- 퍼티 설치 및 ssh 설정
+~/.ssh/ ssh-keygen -t rsa : 공개키, 개인키 생성 or puttygen 사용
+vi .ssh/authorized_keys 공개키 등록
+putty 에 접속 계정 및 개인키 파일 
+
 
 
 - 네트워크 연결 및 ip 확인 : hostname -I
