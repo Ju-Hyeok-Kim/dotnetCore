@@ -75,6 +75,7 @@ rm 파일명
 7~9자리 : 그 외 사용자 권한
 
 - net core 앱 빌드 산출물 centos 로 업로드 및 다운로드
+pscp -i 개인키파일 -r 대상 타겟
 pscp -r D:\DaouDev\DaouPlatform\bin\Release\net6.0\publish\* juhyeok@172.28.228.130:/opt/test11
 pscp -r D:\TestSource\Project1\Project1\bin\Release\net6.0\publish\* juhyeok@172.28.228.130:/opt/Project1
 pscp -r juhyeok@172.28.228.130:/etc/httpd/conf.d/helloapp.conf D:\DaouDev\DaouPlatform\Files
