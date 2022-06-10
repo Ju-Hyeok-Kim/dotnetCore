@@ -47,7 +47,9 @@ sudo systemctl status httpd.service
 cd /etc/httpd/conf.d conf 파일 생성
 sudo apachectl configtest 설정 검증
 
-/usr/sbin/setsebool -P httpd_can_network_connect 1
+SELinux 설정값 확인 및 변경
+sudo /usr/sbin/setsebool -P httpd_can_network_connect 1
+
 
 - apache 로그
 cd /var/log/httpd
