@@ -33,3 +33,13 @@ Environment=ASPNETCORE_ENVIRONMENT=Production
 
 [Install]
 WantedBy=multi-user.target
+
+3. https 적용
+https://cleanupthedesk.tistory.com/27
+
+3.1. ssl 모듈 설치
+sudo yum install mod_ssl -y
+
+3.2 환경설정
+cd /etc/httpd/conf.d/
+ssl.conf
