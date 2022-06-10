@@ -1,7 +1,19 @@
 - 참고
 https://dev.to/esdanielgomez/deploy-asp-net-web-app-to-a-linux-virtual-machine-in-azure-1lji
+https://docs.microsoft.com/ko-kr/dotnet/core/install/linux-centos
 
 - net runtime 설치
+1. Microsoft 패키지 서명 키를 추가하고 패키지 저장소를 추가
+sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
+
+2. 설치
+sudo yum install aspnetcore-runtime-6.0
+
+3. 설치 버전 확인
+dotnet --list-runtimes
+
+
+
 - mysql 설치
 - apache 설치
 https://kimjs6873.tistory.com/5
