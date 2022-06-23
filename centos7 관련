@@ -148,10 +148,21 @@ wsl 설정
 
 
 
+------------
+네트워크 부팅
+cd /etc/sysconfig/network-scripts 에 해당 파일 vi 로 열고 ONBOOT="yes" 로 변경
 
 
 
 
 
+----------------
+NAS 마운트
 
+sudo yum install -y nfs-utils : 패키지 설치
+df -h : 파일시스템 확인
+mount -t nfs [NAS IP주소]:[공유 폴더 경로] [마운트할 경로]
 
+https://goldsony.tistory.com/30
+https://ubuntuforums.org/showthread.php?t=2327836
+https://kim-dragon.tistory.com/38
