@@ -166,3 +166,9 @@ mount -t nfs [NAS IP주소]:[공유 폴더 경로] [마운트할 경로]
 https://goldsony.tistory.com/30
 https://ubuntuforums.org/showthread.php?t=2327836
 https://kim-dragon.tistory.com/38
+
+
+---------------------
+시간설정
+sudo mv /etc/localtime /etc/localtime_org : 시간설정 연결 파일 백업
+sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime : 신규 링크 생성
