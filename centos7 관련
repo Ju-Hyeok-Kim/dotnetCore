@@ -46,8 +46,7 @@ sudo firewall-cmd --reload
 sudo systemctl status firewalld
 
 열린포트 확인
-sudo netstat -ltup
-
+sudo netstat -nlp
 
 서비스 재기동
 sudo systemctl start httpd
