@@ -1,1 +1,42 @@
+1. 업데이트 및 기본 설치
+sudo -y update
+sudo yum install -y yum-utils
 
+2. Docker repository 시스템에 추가
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+3. Docker 설치
+sudo yum -y install docker docker-registry
+
+4. Docker 실행 및 자동실행 서비스 등록
+sudo systemctl start docker.service
+sudo systemctl enable docker.service
+sudo systemctl status docker.service
+
+5. Docker 버전 및 리스트 확인
+sudo docker version
+sudo docker ps -a
+sudo docker container ls
+sudo docker images
+
+
+6. Image 가져오기
+이미지, 컨테이너 생성
+docker save sha256:8f6800533951fd45461f7dbc9dfcbc8e55b93863546c1941ff0651d9409fb763 > c:\imagename.tar
+docker export e05eefdd7a6b6c237d64d3876349ef369435314cab07562619c7e81a2809acf9 > c:\imagename1.tar
+
+이미지, 컨테이너 전송
+pscp -r C:\imagename1.tar DaouAdmin@20.196.222.28:/opt/DockerTest
+
+이미지, 컨테이너 로드
+sudo docker import /opt/DockerTest/DaouPlatform.Common.Container.tar daouplatform.common:pro
+
+
+7. 컨테이너 실행
+sudo docker run -d --name DaouPlatform.Common -p 9898:80 -p 9899:443 daouplatform.common:pro /bin/bash(꺼짐)
+sudo docker run -dit --name DaouPlatform.Common -p 9898:80 -p 9899:443 daouplatform.common:pro /bin/bash
+
+8. 컨테이너 삭제
+
+8. Docker 재시작
+sudo systemctl restart docker.service
