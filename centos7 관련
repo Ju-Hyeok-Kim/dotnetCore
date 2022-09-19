@@ -24,6 +24,10 @@ sudo yum install -y httpd 설치
 cd /etc/httpd 설치경로 이동
 cd /etc/httpd/conf.d 환경설정
 
+아파치 설정
+sudo vi /etc/httpd/conf/httpd.conf
+
+
 방화벽 설정
 sudo firewall-cmd --get-zones
 sudo firewall-cmd --list-all-zones
@@ -35,9 +39,15 @@ sudo firewall-cmd --list-ports
 sudo firewall-cmd --zone=public --add-port=3000/tcp --permanent
 sudo firewall-cmd --add-port=80/tcp --permanent
 sudo firewall-cmd --add-port=443/tcp --permanent
+sudo firewall-cmd --zone=public --remove-port=8000/tcp --permanent
+
 
 sudo firewall-cmd --reload 
 sudo systemctl status firewalld
+
+열린포트 확인
+sudo netstat -ltup
+
 
 서비스 재기동
 sudo systemctl start httpd
@@ -102,7 +112,7 @@ pscp -r D:\ReactTest\news-viewer\build\* juhyeok@172.28.228.130:/opt/react11
 
 - 서비스 파일 만들기
 cd /etc/systemd/system/
-systemctl daemon-reload
+sudo systemctl daemon-reload
 
 - https 기반로드 밸런서
 sudo a2enmod ssl
