@@ -22,22 +22,22 @@ sudo docker images
 
 6. Image 가져오기
 이미지, 컨테이너 생성
-docker save sha256:8f6800533951fd45461f7dbc9dfcbc8e55b93863546c1941ff0651d9409fb763 > c:\imagename.tar
+docker save sha256:040ad0aa3d10395d9eefbc71f5a22b45afae8adab4a6ae297f12761628b0d777 > c:\WebApplication1_Image.tar
 docker export e05eefdd7a6b6c237d64d3876349ef369435314cab07562619c7e81a2809acf9 > c:\imagename1.tar
 
 이미지, 컨테이너 전송
-pscp -r C:\imagename1.tar DaouAdmin@20.196.222.28:/opt/DockerTest
+pscp -r C:\WebApplication1_Image.tar DaouAdmin@20.196.222.28:/opt/WebApplication1
 
 이미지, 컨테이너 로드
 sudo docker import /opt/DockerTest/DaouPlatform.Common.Container.tar daouplatform.common:pro
-
+sudo docker load -i /opt/WebApplication1/WebApplication1_Image.tar
 
 7. 컨테이너 실행
 sudo docker run -d --name DaouPlatform.Common -p 9898:80 -p 9899:443 daouplatform.common:pro /bin/bash(꺼짐)
 sudo docker run -dit --name DaouPlatform.Common -p 9898:80 -p 9899:443 daouplatform.common:pro /bin/bash
 
 8. 컨테이너 삭제
-
+sudo docker rm ad5c05574bb4
 
 
 8. Docker 재시작
