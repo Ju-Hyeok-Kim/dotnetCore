@@ -38,5 +38,7 @@ sudo docker run -dit --name DaouPlatform.Common -p 9898:80 -p 9899:443 daouplatf
 
 8. 컨테이너 삭제
 
+
+
 8. Docker 재시작
 sudo systemctl restart docker.service
