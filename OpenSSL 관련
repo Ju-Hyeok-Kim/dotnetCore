@@ -1,0 +1,21 @@
+1. https://code.google.com/archive/p/openssl-for-windows/downloads 접속 후 openssl-0.9.8k_X64.zip 다운로드
+
+2. openssl.exe 실행
+
+3. 개인키 생성 : 
+genrsa -aes256 -out private.key 2048
+
+4. 공개키 생성 :
+rsa -in private.key -pubout -out public.key
+
+5. 개인키로 인증 서명 요청서(CSR, Cerificate Signing Request) 생성 :
+req -new -key private.key -out private.csr -config ../openssl.cnf
+
+6. 자체 인증 기관(CA, Certificate Authority) 키 생성 : 
+genrsa -aes256 -out root.ca.key 2048 -config ../openssl.cnf
+
+7. 자체 인증 기관키로 PEM 생성 :
+req -x509 -new -nodes -key root.ca.key -days 3650 -out root.ca.pem -config ../openssl.cnf
+
+8. 개인키로 인증 서명 요청서(CSR, Cerificate Signing Request) 에 대해 자체 인증 기관을 통한 인증서(CRT, Certificate) 발급:
+x509 -req -in private.csr -CA root.ca.pem -CAkey root.ca.key -CAcreateserial -out private.crt -days 3650
