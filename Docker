@@ -1,0 +1,9 @@
+docker wsl2 사용
+https://www.lainyzine.com/ko/article/how-to-install-wsl2-and-use-linux-on-windows-10/
+https://learn.microsoft.com/ko-kr/windows/wsl/compare-versions
+
+리눅스 확인
+wsl -l -vㅈ
+
+기본 리눅스 배포판 설정
+wsl --set-default docker-desktop
