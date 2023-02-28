@@ -32,6 +32,9 @@ pscp -r C:\WebApplication1_Image.tar DaouAdmin@20.196.222.28:/opt/WebApplication
 sudo docker import /opt/DockerTest/DaouPlatform.Common.Container.tar daouplatform.common:pro
 sudo docker load -i /opt/WebApplication1/WebApplication1_Image.tar
 
+이미지 삭제
+sudo docker rmi 8228b12c68ec
+
 7. 컨테이너 실행
 sudo docker run -d --name DaouPlatform.Common -p 9898:80 -p 9899:443 daouplatform.common:pro /bin/bash(꺼짐)
 sudo docker run -dit --name DaouPlatform.Common -p 9898:80 -p 9899:443 daouplatform.common:pro /bin/bash
@@ -39,6 +42,14 @@ sudo docker run -dit --name DaouPlatform.Common -p 9898:80 -p 9899:443 daouplatf
 8. 컨테이너 삭제
 sudo docker rm ad5c05574bb4
 
+9. 컨테이너 중지
+sudo docker stop b8814a556a91
+
+9. 컨테이너 접속
+sudo docker attach 17b4361e9831
+
+9. 컨테이너 재시작
+sudo docker restart b8814a556a91
 
 8. Docker 재시작
 sudo systemctl restart docker.service
@@ -53,6 +64,14 @@ sudo docker login -u DaouAdmin -p tX+PJkhy1mbtKC1V2Slj6+kMi/jSQEd6ly0ismG0CC+ACR
 sudo docker pull daoucontainerreg.azurecr.io/daouplatformcommon:latest
 
 
-sudo docker run -dit --name daouplatformcommon -p 9898:80 -p 9899:443 daoucontainerreg.azurecr.io/daouplatformcommon /bin/bash
+특정 컨테이너의 상태를 이미지로 커밋(변경)
+sudo docker commit daouplatformcommon_ daoucontainerreg.azurecr.io/daouplatformcommon:20230228015959
 
+
+
+실행
+sudo docker run -dit --name daouplatformcommon -p 9898:80 -p 9899:443 daoucontainerreg.azurecr.io/daouplatformcommon:Tag /bin/bash
+
+업데이트 참고
+http://daplus.net/docker-%EC%9D%B4%EB%AF%B8%EC%A7%80%EA%B0%80-%EB%B3%80%EA%B2%BD%EB%90%9C-%ED%9B%84-%EB%8F%84%EC%BB%A4-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EB%A5%BC-%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C/
 
