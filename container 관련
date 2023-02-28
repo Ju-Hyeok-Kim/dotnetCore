@@ -42,3 +42,17 @@ sudo docker rm ad5c05574bb4
 
 8. Docker 재시작
 sudo systemctl restart docker.service
+
+
+-----------------------------
+컨테이너 레지스트리 토큰 추가 후 로그인
+sudo docker login -u DaouAdmin -p tX+PJkhy1mbtKC1V2Slj6+kMi/jSQEd6ly0ismG0CC+ACRArbWsS daoucontainerreg.azurecr.io
+
+
+이미지 가져오기
+sudo docker pull daoucontainerreg.azurecr.io/daouplatformcommon:latest
+
+
+sudo docker run -dit --name daouplatformcommon -p 9898:80 -p 9899:443 daoucontainerreg.azurecr.io/daouplatformcommon /bin/bash
+
+
