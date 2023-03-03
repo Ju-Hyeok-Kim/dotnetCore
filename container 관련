@@ -75,3 +75,18 @@ sudo docker run -dit --name daouplatformcommon -p 9898:80 -p 9899:443 daoucontai
 업데이트 참고
 http://daplus.net/docker-%EC%9D%B4%EB%AF%B8%EC%A7%80%EA%B0%80-%EB%B3%80%EA%B2%BD%EB%90%9C-%ED%9B%84-%EB%8F%84%EC%BB%A4-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EB%A5%BC-%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C/
 
+
+docker 볼륨 경로
+/var/lib/docker/volumes
+
+볼륨 리스트 확인
+sudo docker volume ls
+
+볼륨 생성
+docker volume create Logs
+
+볼륨 삭제
+sudo docker volume rm 1b82eacaec512f1d5ac2cbe285f0bd2062bf53e2d88df92c8717838fb8d6837d
+
+컨테이너 진입
+docker exec -it c332556f8120 /bin/bash
