@@ -1,0 +1,36 @@
+023
+docker run -d --expose=80 --name daouplatform_21_858d4776 -e WEBSITE_AUTH_ENABLED=False -e DOCKER_CUSTOM_IMAGE_NAME=daoucontainerreg.azurecr.io/daouplatformcommon:20230228072647 -e WEBSITES_ENABLE_APP_SERVICE_STORAGE=false -e WEBSITE_SITE_NAME=DaouPlatform -e PORT=80 -e WEBSITE_ROLE_INSTANCE_ID=0 -e WEBSITE_HOSTNAME=daouplatform.azurewebsites.net -e WEBSITE_INSTANCE_ID=9fcb90273b0dd47c3adf3964fe3269b597a6b0b92e8f2c61e1161bf87114374b -e WEBSITE_USE_DIAGNOSTIC_SERVER=False daoucontainerreg.azurecr.io/daouplatformcommon:20230228072647
+
+
+
+sudo docker stor
+
+sudo docker run -dit --name daouplatformcommon_vol -v /Logsg:/Logs -v /Deploy:/Deploy -p 19898:80 -p 19899:443 daoucontainerreg.azurecr.io/daouplatformcommon:20230228072647 /bin/bash
+
+sudo docker run -dit --name daouplatformcommon_vol -v Logs:/Logs -p 19898:80 -p 19899:443 daoucontainerreg.azurecr.io/daouplatformcommon:20230228082732 /bin/bash
+
+20230228082732
+
+sudo docker volume ls
+
+
+
+sudo docker stop 
+sudo docker rm
+sudo docker run -dit --name daouplatformcommon_vol -p 19898:80 -p 19899:443 daoucontainerreg.azurecr.io/daouplatformcommon:20230302060244 /bin/bash
+
+sudo docker run -dit --name daouplatformcommon_vol -v /var/lib/docker/volumes/Logs:/Logs -v /var/lib/docker/volumes/Deploy:/Deploy -p 19898:80 -p 19899:443 daoucontainerreg.azurecr.io/daouplatformcommon:20230302060244 /bin/bash
+
+
+sudo docker run -dit --name daouplatformcommon_vol -v /Logs:/Logs -v /Deploy:/Deploy -p 19898:80 -p 19899:443 daoucontainerreg.azurecr.io/daouplatformcommon:20230302060244 /bin/bash
+
+
+
+sudo docker run -dit --name daouplatformcommon_vol -v Logs:/Logs -p 19898:80 -p 19899:443 daoucontainerreg.azurecr.io/daouplatformcommon:20230302060244 /bin/bash
+sudo docker run -dit --name daouplatformcommon_vol -v Logs:/Logs -p 80:80 -p 443:443 daoucontainerreg.azurecr.io/daouplatformcommon:20230302060244 /bin/bash
+
+docker exec -it 3db6d63e36af /bin/bash
+
+
+Deploy 테스트
+cmd 로 volume 생성
