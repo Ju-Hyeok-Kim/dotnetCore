@@ -23,3 +23,10 @@ GRANT ALL PRIVILEGES ON *.* to 'Daou'@'%';
 
 8. 새로고침
 flush privileges;
+
+9. 시간설정
+- 시간설정 연결 파일 백업
+sudo mv /etc/localtime /etc/localtime_org
+- 신규 링크 생성
+sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
