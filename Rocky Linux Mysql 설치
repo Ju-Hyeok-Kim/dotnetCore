@@ -1,0 +1,25 @@
+1. 설치
+dnf install mysql-server
+
+2. 서비스 실행
+systemctl enable mysqld
+systemctl start mysqld
+systemctl status mysqld
+
+3. 보안 설정
+mysql_secure_installation
+
+4. 버전 확인
+mysqladmin -u root -p version
+
+5. mysql 접속
+mysql -u root -p
+
+6. 사용자 생성
+CREATE USER 'Daou'@'%' identified by 'Daou@2022';
+
+7. 권한 할당
+GRANT ALL PRIVILEGES ON *.* to 'Daou'@'%';
+
+8. 새로고침
+flush privileges;
