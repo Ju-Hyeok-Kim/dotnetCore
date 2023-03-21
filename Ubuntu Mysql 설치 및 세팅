@@ -8,7 +8,7 @@ ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 apt-get update
 
 1. 설치
-apt-get install mysql-server
+apt-get install -y mysql-server
 
 2. 서비스 실행
 systemctl enable mysql
