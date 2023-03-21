@@ -1,8 +1,8 @@
 * 시간설정
 - 시간설정 연결 파일 백업
-sudo mv /etc/localtime /etc/localtime_org
+mv /etc/localtime /etc/localtime_org
 - 신규 링크 생성
-sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 1. 업데이트
 apt-get update
