@@ -57,7 +57,10 @@ docker volume create NginxContents
 docker run -dit --name nginx_webserver --env TZ=Asia/Seoul -v Nginx:/etc/nginx -p 80:80 -p 443:443 nginx
 docker run -dit --name nginx_webserver --env TZ=Asia/Seoul -v Nginx:/etc/nginx -v NginxContents:/usr/share/nginx/html -p 80:80 -p 443:443 nginx
 
-
+4. nginx 설정 변경
+cd /var/lib/docker/volumes/Nginx/_data
+vi nginx.conf
+http 블록에 client_max_body_size 0; 
 
 * 컨테이너 무중단 배포
 1. cd /var/lib/docker/volumes/Nginx/_data/conf.d
