@@ -1,0 +1,84 @@
+ccc- 마이그레이션 생성 : Add-Migration [마이그레이션명] -Context [컨텍스트명] -OutputDir [프로젝트\디렉토리명]
+ex) Add-Migration InitialCreate -Context ApplicationDBContext -OutputDir Migrations
+
+- 마이그레이션 업데이트 : Update-Database -Context [컨텍스트명]
+ex) Update-Database -Context ApplicationDBContext
+Update-Database 20230210044922_InitialCreate -Context ApplicationDBContext
+
+- 마이그레이션 제거 : Remove-Migration -Context [컨텍스트명]
+ex) Remove-Migration -Context ApplicationDBContext
+
+- 데이터베이스 제거 : Drop-Database -Context [컨텍스트명]
+ex) Drop-Database -Context ApplicationDBContext
+
+- SQL 스크립트 생성 : Script-Migration [From] [To]
+ex) Script-Migration -Context ApplicationDBContext
+
+[From] 마이그레이션은 스크립트를 실행하기 전에 데이터베이스에 적용된 마지막 마이그레이션이 되어야 합니다. 적용된 마이그레이션이 없으면 0(기본값)을 지정합니다.
+[To] 마이그레이션을 스크립트를 실행한 후에 데이터베이스에 적용된 마지막 마이그레이션이 되어야 합니다. 기본값은 프로젝트의 마지막 마이그레이션입니다.
+ex) Script-Migration AddNewTables AddAuditTable
+
+- 데이터베이스에 마지막으로 적용된 마이그레이션이 무엇인지 정확히 알지 못하거나,
+각각 다른 마이그레이션에 있을 수 있는 여러 데이터베이스에 배포하는 경우에 유용 : Script-Migration -Idempotent
+
+- 번들 : Bundle-Migration -SelfContained -TargetRuntime linux-x64
+
+- 마이그레이션 프로젝트 분리 참고 : 
+https://docs.microsoft.com/ko-kr/ef/core/managing-schemas/migrations/projects?tabs=vs
+https://github.com/dotnet/EntityFramework.Docs/tree/main/samples/core/Schemas/ThreeProjectMigrations
+---------------------------------------------------
+Cmdlet                      Description
+--------------------------  ---------------------------------------------------
+Add-Migration               Adds a new migration.
+
+Bundle-Migration            Creates an executable to update the database.
+
+Drop-Database               Drops the database.
+
+Get-DbContext               Lists and gets information about available DbContext types.
+
+Get-Migration               Lists available migrations.
+
+Optimize-DbContext          Generates a compiled version of the model used by the DbContext.
+
+Remove-Migration            Removes the last migration.
+
+Scaffold-DbContext          Scaffolds a DbContext and entity types for a database.
+
+Script-DbContext            Generates a SQL script from the DbContext. Bypasses any migrations.
+
+Script-Migration            Generates a SQL script from migrations.
+
+Update-Database             Updates the database to a specified migration.
+
+
+SEE ALSO
+    Add-Migration
+    Bundle-Migration
+    Drop-Database
+    Get-DbContext
+    Get-Migration
+    Optimize-DbContext
+    Remove-Migration
+    Scaffold-DbContext
+    Script-DbContext
+    Script-Migration
+    Update-Database
+
+
+ --------------------------------------------------------------------------------------------------
+ <개발 및 운영 DB 마이그레이션 적용 프로세스>
+ - 개발 DB 마이그레이션 적용
+ 1. 모델 작성 및 수정
+ 2. 마이그레이션 생성
+ 3. 개발 DB 마이그레이션 업데이트
+ 1~3 반복
+
+ - 운영 DB 마이그레이션 적용
+ 1. 운영 DB 에 적용된 마이그레이션 이후에 생성된 마이그레이션을 개발 DB 에서 모두 삭제
+   : 생성된 마이그레이션이 이미 개발 DB에 적용된 상태이기 때문에 이전 버전으로 하나씩 마이그레이션 업데이트, 마이그레이션 삭제 작업 진행
+ 2. 새 마이그레이션 생성
+ 3. SQL 스크립트 생성 후 검토. SQL 스크립트 저장
+ 4. 운영 DB 백업 후 생성
+ 5. 생성 된 운영 백업 DB 마이그레이션 업데이트 후 확인
+ 6. 운영 DB 마이그레이션 업데이트
