@@ -11,7 +11,7 @@ ssl_certificate_key     /etc/nginx/conf.d/ssl/key.pem;
 4. default.conf 수정
 server {
         listen 443 ssl;
-        server_name cadchingu.com;
+        server_name localhost;
 
         ssl_certificate         /etc/nginx/conf.d/ssl/cer.pem;
         ssl_certificate_key     /etc/nginx/conf.d/ssl/key.pem;
@@ -21,6 +21,7 @@ server {
         location / {
                root   /usr/share/nginx/html;
                index  index.html index.htm;
+               
 #               proxy_pass_header Server;
 #               proxy_set_header X-Forwarded-Host $host;
 #               proxy_set_header X-Forwarded-Server $host;
