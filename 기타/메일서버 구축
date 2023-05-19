@@ -1,0 +1,21 @@
+1. apt-get update
+2. apt install sendmail*
+3. cd /etc/mail
+4. vi sendmail.mc
+5. DAEMON_OPTIONS Addr 0.0.0.0 으로 변경
+6. vi sendmail.cf
+7. Cwlocalhost 을 도메인으로 변경
+8 SMTP daemon options Addr 0.0.0.0 으로 변경
+9. vi access x
+10. vi local-host-names 도메인 추가
+11. systemctl restart sendmail
+12 테스트
+telnet localhost 25
+mail from kim-jh@daouplatform.co.kr
+
+
+
+
+참고
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=ghurm12&logNo=220636481450
+https://originalchoi.tistory.com/m/entry/SendMail-%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EB%A9%94%EC%9D%BC-%EC%86%A1%EC%88%98%EC%8B%A0-%ED%95%98%EA%B8%B0
