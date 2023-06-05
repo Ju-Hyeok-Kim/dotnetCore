@@ -9,6 +9,16 @@ sudo mv /etc/localtime /etc/localtime_org
 sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 4. 서버 시간 확인
 date
+5. Locale 확인
+locale
+6. 한글 패키지 설치
+sudo apt-get install language-pack-ko
+sudo locale-gen ko_KR.UTF-8
+sudo dpkg-reconfigure locales
+7. 업데이트
+sudo update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX
+8. 확인
+vi /etc/default/locale
 
 
 
