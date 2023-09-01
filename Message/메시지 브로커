@@ -25,6 +25,7 @@ rabbitmq-plugins enable rabbitmq_management
 6. 관리자 계정 추가
 rabbitmqctl add_user admin admin1
 rabbitmqctl set_user_tags admin administrator
+rabbitmqctl list_users
 
 7. MQTT 플러그인 활성화
 rabbitmq-plugins enable rabbitmq_mqtt
