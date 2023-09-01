@@ -1,1 +1,30 @@
+- 설명
 https://ocwokocw.tistory.com/236
+https://velog.io/@mdy0102/MQ-%EB%B9%84%EA%B5%90-Kafka-RabbitMQ-Redis
+https://tech.kakao.com/2021/12/23/kafka-rabbitmq/
+
+- RabbitMQ 설치
+1. 업데이트
+apt-get update
+
+2. 설치
+apt install rabbitmq-server
+
+3. 상태확인
+systemctl status rabbitmq-server
+
+4. 플러그인 활성화
+rabbitmq-plugins enable rabbitmq_management
+
+5. 포트오픈
+5672, 5671 : AMQP 를 사용한 메시지 전달
+15672 : HTTP API, Management UI
+4369 : epmd, 여러 rabbitmq 서버끼리 서로를 찾을 수 있는 네임 서버 역할을 하는 데몬에서 사용
+25672 : inter-node 와 CLI Tool 연결
+
+6. 관리자 계정 추가
+rabbitmqctl add_user admin admin1
+rabbitmqctl set_user_tags admin administrator
+
+7. MQTT 플러그인 활성화
+rabbitmq-plugins enable rabbitmq_mqtt
