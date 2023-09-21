@@ -1,0 +1,29 @@
+1. 디스크 공간 통계
+df -h
+
+2. 디스크 확인
+fdisk -l
+
+3. 추가된 디스크에 대해 파티션 생성
+fdisk /dev/sdc
+command n(새 파티션 생성)
+https://www.geeksforgeeks.org/fdisk-command-in-linux-with-examples/
+
+4. 파티션 포멧(디스크명이 아닌 파티션이름으로(Device)
+mkfs.ext4 /dev/sdc1
+
+5. uuid 확인
+blkid
+
+6. 마운트 디렉토리 생성
+mkdir /mnt/DaouDataDisk1
+
+7. fstab 설정
+vi /etc/fstab
+
+8. 내용 추가
+UUID=5347f2b8-9e2d-4d38-b462-ec81f95f6857 /mnt/DaouDataDisk1 ext4 defaults 0 0
+UUID=[UUID값] [실제 마운트될 디렉토리] [파티션 포맷] defaults 0 0
+
+9. 마운트 적용
+mount -a
