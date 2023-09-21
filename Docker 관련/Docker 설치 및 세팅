@@ -50,6 +50,8 @@ sudo systemctl start docker.service
 sudo systemctl enable docker.service
 sudo systemctl status docker.service
 
+6. 폴더 권한 수정
+chmod 770 docker
 
 
 * nginx 이미지 설치
