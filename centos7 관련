@@ -106,6 +106,16 @@ pscp -r D:\DaouDev\DaouPlatform\bin\Release\net6.0\publish\* juhyeok@172.28.228.
 pscp -r D:\TestSource\Project1\Project1\bin\Release\net6.0\publish\* juhyeok@172.28.228.130:/opt/Project1
 pscp -r juhyeok@172.28.228.130:/etc/httpd/conf.d/helloapp.conf D:\DaouDev\DaouPlatform\Files
 
+root 패스워드 설정 후 ssh 설정 변경 후 전송
+1. sudo passwd root
+2. sudo vi /etc/ssh/sshd_config
+3. PermitRootLogin yes
+4. sudo service ssh restart
+
+
+
+
+
 - 리액트
 pscp -r D:\ReactTest\news-viewer\build\* juhyeok@172.28.228.130:/opt/react11
 
