@@ -3,3 +3,29 @@
 - https://mozi.tistory.com/372
 - https://www.happykoo.net/@happykoo/posts/51
 - https://velog.io/@xogml951/Redis-replicationSentinel-Cluster
+
+
+설치
+1. 업데이트
+sudo apt-get update
+sudo apt-get upgrade
+
+2. 설치
+sudo apt-get install redis-server
+
+3. 버전 체크 및 포트 확인
+redis-server --version
+netstat -nlpt | grep 6379
+
+4. 환경설정
+sudo vi /etc/redis/redis.conf
+: maxmemory 1gb
+  maxmemory-policy allkeys-lru 설정(메모리 최대로 찼을 경우 정책)
+:    백업 방식 설정
+
+
+5. 재시작
+sudo systemctl restart redis-server.service
+
+6. redis 서버 접속
+redis-cli
