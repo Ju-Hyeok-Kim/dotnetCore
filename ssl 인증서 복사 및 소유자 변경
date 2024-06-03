@@ -9,3 +9,15 @@ chown root:root www_api-cadchingu.co.kr.key
 chown root:root www_api-cadchingu.co.kr_cert.crt
 chown root:root www_api-cadchingu.co.kr_chain_cert.crt
 chown root:root www_api-cadchingu.co.kr_root_cert.crt
+
+
+
+
+정적파일 배포
+cd /home/DaouAdmin
+mkdir /home/DaouAdmin/Upload
+chown DaouAdmin:DaouAdmin Upload
+pscp -r -p C:\Users\daoudata_tech\Desktop\Sample\* DaouAdmin@20.196.211.168:/home/DaouAdmin/Upload
+pscp -r -p C:\Users\daoudata_tech\Desktop\ssl\* DaouAdmin@20.214.170.113:/home/DaouAdmin/Upload
+cp -r /home/DaouAdmin/Upload/* /var/lib/docker/volumes/Nginx/_data/conf.d/ssl2024
+rm -rf /home/DaouAdmin/Upload
