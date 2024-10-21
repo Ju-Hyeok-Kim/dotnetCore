@@ -1,8 +1,12 @@
+인증서 서버로 업로드
+pscp -r -p D:\Upload\* DaouAdmin@20.214.232.162:/home/DaouAdmin/Upload
+
 인증서 이동
-mv /home/DaouAdmin/Upload/www_api-cadchingu.co.kr.key /var/lib/docker/volumes/Nginx/_data/conf.d/ssl
-mv /home/DaouAdmin/Upload/www_api-cadchingu.co.kr_cert.crt /var/lib/docker/volumes/Nginx/_data/conf.d/ssl
-mv /home/DaouAdmin/Upload/www_api-cadchingu.co.kr_chain_cert.crt /var/lib/docker/volumes/Nginx/_data/conf.d/ssl
-mv /home/DaouAdmin/Upload/www_api-cadchingu.co.kr_root_cert.crt /var/lib/docker/volumes/Nginx/_data/conf.d/ssl
+mkdir ssl_2024
+mv /home/DaouAdmin/Upload/www_api-cadchingu.co.kr.key /var/lib/docker/volumes/Nginx/_data/conf.d/ssl_2024
+mv /home/DaouAdmin/Upload/www_api-cadchingu.co.kr_cert.crt /var/lib/docker/volumes/Nginx/_data/conf.d/ssl_2024
+mv /home/DaouAdmin/Upload/www_api-cadchingu.co.kr_chain_cert.crt /var/lib/docker/volumes/Nginx/_data/conf.d/ssl_2024
+mv /home/DaouAdmin/Upload/www_api-cadchingu.co.kr_root_cert.crt /var/lib/docker/volumes/Nginx/_data/conf.d/ssl_2024
 
 파일 소유자 변경
 chown root:root www_api-cadchingu.co.kr.key
@@ -10,7 +14,7 @@ chown root:root www_api-cadchingu.co.kr_cert.crt
 chown root:root www_api-cadchingu.co.kr_chain_cert.crt
 chown root:root www_api-cadchingu.co.kr_root_cert.crt
 
-
+cd ..
 
 
 정적파일 배포
